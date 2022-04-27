@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a OnlyFlans</title>
+</head>
+
+<body>
+    {% extends 'base.html' %}
+    {% block 'content' %}
+    <div class="container">
+
+        <div class="row">
+            <div class="col mt-1 mb-01">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                    <h2>
+                        Nuestros Productos
+                    </h2>
+                    <p>
+                        OnlyFlans nace el año 2021 buscando entregar flanes de calidad.
+                    </p>
+                    <a href="{%url 'acerca' %}" class="btn btn-outline-light">Conoce más</a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row container">
+            {% for flan in public_flans %}
+            <div class="col-lg 3 col-md-3 col-sm-12 col-xs-12 mt-4 mb-04">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ flan.image_url }}" class="card-img-top d-block img-fluid w-100" alt=""
+                        style="height: 12rem">
+                    <div class="card-body">
+                        <h5 class="card-title three">
+                            {{ flan.name }}
+                        </h5>
+                        <p class="card-text two">
+                            {{ flan.description }}
+                        </p>
+                        <p class="card-text text-end three">
+                            ${{ flan.price }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+    {% endblock %}
+</body>
+
+</html>

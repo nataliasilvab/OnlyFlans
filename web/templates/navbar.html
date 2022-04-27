@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light mb-2 ">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="{% url 'indice' %}">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{% url 'bienvenido' %}">Bienvenido</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="{% url 'local' %}">Locales</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="{% url 'acerca' %}">Acerca</a>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{% url 'contacto' %}">Contacto</a>
+                    </li>
+
+
+
+                </ul>
+
+                <form >
+                    
+                    <div class="text-center">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            {% if not user.is_authenticated %}
+                            <li class="nav-item ">
+                                <a class="btn float-right text-white border btn-outline-light " href="{% url 'login' %}">Login</a>
+                            </li>
+                            {% endif %}
+                        
+                            {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="btn float-right text-white border btn-outline-light " href="{% url 'logout' %}">Logout</a>
+                            </li>
+                            {% endif %}
+                        
+                        </ul>
+                    </div>
+                    
+                </form>
+
+
+
+            </div>
+
+
+
+        </div>
+
+     
+
+
+    </nav>
+
+
+
+</body>
+
+</html>

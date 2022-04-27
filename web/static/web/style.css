@@ -1,0 +1,44 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+.one { font-style: italic; }
+.two { 
+    font-style: oblique; 
+    font-weight: bold;
+}
+
+.three { 
+    
+    font-weight: bold;
+}
+
+
+
+.imagen {
+ height: 1000px;
+ width: 600px;
+}
+
+
+
+/*
+Forces image to be 100% width and not max width of 100%
+*/
+.carousel-item .img-fluid {
+  width:100%;
+}
+
+/* 
+anchors are inline so you need ot make them block to go full width
+*/
+.carousel-item a {
+  display: block;
+  width:100%;
+}
+
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
